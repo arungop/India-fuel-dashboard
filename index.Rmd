@@ -1,8 +1,12 @@
 ---
 title: "Indian Fuel price dashboard "
-output:
+output: 
   flexdashboard::flex_dashboard:
-    orientation: row
+    theme: flatly
+    orientation: rows
+    social: menu
+    source_code: embed
+    vertical_layout: fill
 ---
 
 
@@ -10,6 +14,7 @@ output:
 library(flexdashboard)
 library(tidyverse)
 library(plotly)
+library(highcharter)
 
 Diesel <- read.csv("https://open-oven.github.io/India-Fuel-Price-Updater/data/Diesel.csv")
 
@@ -22,12 +27,12 @@ diesel_latest <- slice(Diesel, 1L)
 
 ```
 
-Last update: `r petrol_latest$Date` ... Source: [Open Oven]()
+Last update: `r petrol_latest$Date` ... Source: [arungop](https://github.com/arungop/India-fuel-dashboard)
 
 
 # Delhi
 
-Row  {.tabset .tabset-fade}
+Row  {.tabset .tabset-fade }
 -------------------------------------
 
 ### Petrol Price
@@ -44,6 +49,8 @@ Pd <- ggplot(Petrol, aes(x = Date, y = Delhi)) +            # Draw ggplot2 plot
   theme_minimal()
   
 ggplotly(Pd)
+
+
 ```
 
 
@@ -68,13 +75,13 @@ Row {data-height=350}
 -------------------------------------
 ### Today's Petrol price
 ```{r}
-valueBox(petrol_latest$Delhi,icon = "fa-pencil")
+valueBox(petrol_latest$Delhi,icon = "fa-gas-pump")
 ```
 
 
 ### Today's Diesel price
 ```{r}
-valueBox(diesel_latest$Delhi,icon = "fa-pencil",color = "success")
+valueBox(diesel_latest$Delhi,icon = "fa-gas-pump",color = "success")
 ```
 
 # Mumbai
@@ -120,13 +127,13 @@ Row {data-height=350}
 -------------------------------------
 ### Today's Petrol price
 ```{r}
-valueBox(petrol_latest$Mumbai,icon = "fa-pencil")
+valueBox(petrol_latest$Mumbai,icon = "fa-gas-pump")
 ```
 
 
 ### Today's Diesel price
 ```{r}
-valueBox(diesel_latest$Mumbai,icon = "fa-pencil",color = "success")
+valueBox(diesel_latest$Mumbai,icon = "fa-gas-pump",color = "success")
 ```
 
 
@@ -173,13 +180,13 @@ Row {data-height=350}
 -------------------------------------
 ### Today's Petrol price
 ```{r}
-valueBox(petrol_latest$Chennai,icon = "fa-pencil")
+valueBox(petrol_latest$Chennai,icon = "fa-gas-pump")
 ```
 
 
 ### Today's Diesel price
 ```{r}
-valueBox(diesel_latest$Chennai,icon = "fa-pencil",color = "success")
+valueBox(diesel_latest$Chennai,icon = "fa-gas-pump",color = "success")
 ```
 
 # Kolkata
@@ -225,11 +232,11 @@ Row {data-height=350}
 -------------------------------------
 ### Today's Petrol price
 ```{r}
-valueBox(petrol_latest$Kolkata,icon = "fa-pencil")
+valueBox(petrol_latest$Kolkata,icon = "fa-gas-pump")
 ```
 
 
 ### Today's Diesel price
 ```{r}
-valueBox(diesel_latest$Kolkata,icon = "fa-pencil",color = "success")
+valueBox(diesel_latest$Kolkata,icon = "fa-gas-pump",color = "success")
 ```
