@@ -56,8 +56,8 @@ jobs:
         shell: Rscript {0}
 
     # Render Dashboard using rmarkdown
-    - name: render Dashboard
-      run: Rscript -e 'rmarkdown::render("index.Rmd", output_format = "html_document")'
+      - name: render Dashboard
+         run: Rscript -e 'rmarkdown::render("index.Rmd", output_format = "html_document")'
 
  # Add new files in data folder, commit along with other modified files, push
       - name: Commit files
