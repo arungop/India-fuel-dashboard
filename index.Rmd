@@ -25,12 +25,27 @@ Petrol <- read.csv("https://open-oven.github.io/India-Fuel-Price-Updater/data/Pe
 petrol_latest <- slice(Petrol, 1L) 
 diesel_latest <- slice(Diesel, 1L)
 
+
 ```
 
-Last update: `r petrol_latest$Date` ... Source: [arungop](https://github.com/arungop/India-fuel-dashboard)
+Last update: `r petrol_latest$Date` ... Source: [India fuel dashboard - github](https://github.com/arungop/India-fuel-dashboard)
 
 
 # Delhi
+
+Row {data-height=350}
+-------------------------------------
+### Today's Petrol price
+```{r}
+valueBox(petrol_latest$Delhi,icon = "fa-gas-pump")
+```
+
+
+### Today's Diesel price
+```{r}
+valueBox(diesel_latest$Delhi,icon = "fa-gas-pump",color = "success")
+```
+
 
 Row  {.tabset .tabset-fade }
 -------------------------------------
@@ -39,6 +54,8 @@ Row  {.tabset .tabset-fade }
 
 ```{r}
 Petrol$Date <- as.Date(Petrol$Date)
+
+
 
 Pd <- ggplot(Petrol, aes(x = Date, y = Delhi)) +            # Draw ggplot2 plot
   geom_area( fill="#69b3a2", alpha=0.4) +
@@ -59,6 +76,7 @@ ggplotly(Pd)
 ```{r}
 Diesel$Date <- as.Date(Diesel$Date)
 
+
 Dd <- ggplot(Petrol, aes(x = Date, y = Delhi)) +            # Draw ggplot2 plot
   geom_area( fill="#FFA500", alpha=0.4) +
   geom_line(color="#FFA500", size=2) +
@@ -71,20 +89,22 @@ ggplotly(Dd)
 ```
 
 
+
+# Mumbai
+
 Row {data-height=350}
 -------------------------------------
 ### Today's Petrol price
 ```{r}
-valueBox(petrol_latest$Delhi,icon = "fa-gas-pump")
+valueBox(petrol_latest$Mumbai,icon = "fa-gas-pump")
 ```
 
 
 ### Today's Diesel price
 ```{r}
-valueBox(diesel_latest$Delhi,icon = "fa-gas-pump",color = "success")
+valueBox(diesel_latest$Mumbai,icon = "fa-gas-pump",color = "success")
 ```
 
-# Mumbai
 
 Row  {.tabset .tabset-fade}
 -------------------------------------
@@ -123,21 +143,23 @@ ggplotly(Md)
 ```
 
 
+
+
+# Chennai
+
 Row {data-height=350}
 -------------------------------------
 ### Today's Petrol price
 ```{r}
-valueBox(petrol_latest$Mumbai,icon = "fa-gas-pump")
+valueBox(petrol_latest$Chennai,icon = "fa-gas-pump")
 ```
 
 
 ### Today's Diesel price
 ```{r}
-valueBox(diesel_latest$Mumbai,icon = "fa-gas-pump",color = "success")
+valueBox(diesel_latest$Chennai,icon = "fa-gas-pump",color = "success")
 ```
 
-
-# Chennai
 
 Row  {.tabset .tabset-fade}
 -------------------------------------
@@ -176,20 +198,22 @@ ggplotly(Cd)
 ```
 
 
+
+# Kolkata
+
 Row {data-height=350}
 -------------------------------------
 ### Today's Petrol price
 ```{r}
-valueBox(petrol_latest$Chennai,icon = "fa-gas-pump")
+valueBox(petrol_latest$Kolkata,icon = "fa-gas-pump")
 ```
 
 
 ### Today's Diesel price
 ```{r}
-valueBox(diesel_latest$Chennai,icon = "fa-gas-pump",color = "success")
+valueBox(diesel_latest$Kolkata,icon = "fa-gas-pump",color = "success")
 ```
 
-# Kolkata
 
 Row  {.tabset .tabset-fade}
 -------------------------------------
@@ -228,15 +252,3 @@ ggplotly(Kd)
 ```
 
 
-Row {data-height=350}
--------------------------------------
-### Today's Petrol price
-```{r}
-valueBox(petrol_latest$Kolkata,icon = "fa-gas-pump")
-```
-
-
-### Today's Diesel price
-```{r}
-valueBox(diesel_latest$Kolkata,icon = "fa-gas-pump",color = "success")
-```
