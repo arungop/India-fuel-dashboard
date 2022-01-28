@@ -1,5 +1,5 @@
 # Dashboard
-name: Indian fuel Dashboard
+name: Indian fue Dashboard
 
 # Controls when the action will run.
 on:
@@ -55,9 +55,9 @@ jobs:
           install.packages('highcharter')
         shell: Rscript {0}
 
-    # Render  using rmarkdown
-      - name: render dahboard
-         run: Rscript -e 'rmarkdown::render("index.Rmd", output_format = "html_document")'
+    # Render Dashboard using rmarkdown
+    - name: render Dashboard
+      run: Rscript -e 'rmarkdown::render("index.Rmd", output_format = "html_document")'
 
  # Add new files in data folder, commit along with other modified files, push
       - name: Commit files
