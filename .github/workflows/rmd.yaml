@@ -49,7 +49,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           install.packages('tidyverse')
-          install.packages('fexdashboard')
+          install.packages('flexdashboard')
           install.packages('rmarkdown')
           install.packages('plotly')
           install.packages('highcharter')
