@@ -65,7 +65,7 @@ Pd <- ggplot(Petrol, aes(x = Date, y = Delhi)) +            # Draw ggplot2 plot
   scale_x_date(date_labels = "%Y-%m")+
   theme_minimal()
   
-ggplotly(Pd)
+Pd
 
 
 ```
@@ -77,7 +77,7 @@ ggplotly(Pd)
 Diesel$Date <- as.Date(Diesel$Date)
 
 
-Dd <- ggplot(Petrol, aes(x = Date, y = Delhi)) +            # Draw ggplot2 plot
+Dd <- ggplot(Diesel, aes(x = Date, y = Delhi)) +            # Draw ggplot2 plot
   geom_area( fill="#FFA500", alpha=0.4) +
   geom_line(color="#FFA500", size=2) +
   ylab("Price")+
@@ -85,7 +85,7 @@ Dd <- ggplot(Petrol, aes(x = Date, y = Delhi)) +            # Draw ggplot2 plot
   scale_x_date(date_labels = "%Y-%m")+
   theme_minimal()
   
-ggplotly(Dd)
+Dd
 ```
 
 
@@ -122,7 +122,7 @@ Mp <- ggplot(Petrol, aes(x = Date, y = Mumbai)) +            # Draw ggplot2 plot
   scale_x_date(date_labels = "%Y-%m")+
   theme_minimal()
   
-ggplotly(Mp)
+Mp
 ```
 
 
@@ -131,7 +131,7 @@ ggplotly(Mp)
 ```{r}
 Diesel$Date <- as.Date(Diesel$Date)
 
-Md <- ggplot(Petrol, aes(x = Date, y = Mumbai)) +            # Draw ggplot2 plot
+Md <- ggplot(Diesel, aes(x = Date, y = Mumbai)) +            # Draw ggplot2 plot
   geom_area( fill="#FFA500", alpha=0.4) +
   geom_line(color="#FFA500", size=2) +
   ylab("Price")+
@@ -139,7 +139,7 @@ Md <- ggplot(Petrol, aes(x = Date, y = Mumbai)) +            # Draw ggplot2 plot
   scale_x_date(date_labels = "%Y-%m")+
   theme_minimal()
   
-ggplotly(Md)
+Md
 ```
 
 
@@ -177,7 +177,7 @@ Cp <- ggplot(Petrol, aes(x = Date, y = Chennai)) +            # Draw ggplot2 plo
   scale_x_date(date_labels = "%Y-%m")+
   theme_minimal()
   
-ggplotly(Cp)
+Cp
 ```
 
 
@@ -186,7 +186,7 @@ ggplotly(Cp)
 ```{r}
 Diesel$Date <- as.Date(Diesel$Date)
 
-Cd <- ggplot(Petrol, aes(x = Date, y = Chennai)) +            # Draw ggplot2 plot
+Cd <- ggplot(Diesel, aes(x = Date, y = Chennai)) +            # Draw ggplot2 plot
   geom_area( fill="#FFA500", alpha=0.4) +
   geom_line(color="#FFA500", size=2) +
   ylab("Price")+
@@ -194,7 +194,7 @@ Cd <- ggplot(Petrol, aes(x = Date, y = Chennai)) +            # Draw ggplot2 plo
   scale_x_date(date_labels = "%Y-%m")+
   theme_minimal()
   
-ggplotly(Cd)
+Cd
 ```
 
 
@@ -231,7 +231,7 @@ Kp <- ggplot(Petrol, aes(x = Date, y = Kolkata)) +            # Draw ggplot2 plo
   scale_x_date(date_labels = "%Y-%m")+
   theme_minimal()
   
-ggplotly(Kp)
+Kp
 ```
 
 
@@ -240,7 +240,7 @@ ggplotly(Kp)
 ```{r}
 Diesel$Date <- as.Date(Diesel$Date)
 
-Kd <- ggplot(Petrol, aes(x = Date, y = Kolkata)) +            # Draw ggplot2 plot
+Kd <- ggplot(Diesel, aes(x = Date, y = Kolkata)) +            # Draw ggplot2 plot
   geom_area( fill="#FFA500", alpha=0.4) +
   geom_line(color="#FFA500", size=2) +
   ylab("Price")+
@@ -248,7 +248,7 @@ Kd <- ggplot(Petrol, aes(x = Date, y = Kolkata)) +            # Draw ggplot2 plo
   scale_x_date(date_labels = "%Y-%m")+
   theme_minimal()
   
-ggplotly(Kd)
+Kd
 ```
 
 
