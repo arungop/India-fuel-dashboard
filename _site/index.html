@@ -1881,7 +1881,7 @@ window.FlexDashboardComponents.push({
 
 <div id="dashboard-container">
 
-<p>Last update: 2022-01-28 … Source: <a href="https://github.com/arungop/India-fuel-dashboard">India fuel dashboard - github</a></p>
+<p>Last update: 2022-02-04 … Source: <a href="https://github.com/arungop/India-fuel-dashboard">India fuel dashboard - github</a></p>
 <div id="delhi" class="section level1">
 <h1>Delhi</h1>
 <div id="row" class="section level2" data-height="350">
@@ -2063,19 +2063,13 @@ output:
 ```{r setup, include=FALSE}
 library(flexdashboard)
 library(tidyverse)
-library(plotly)
-library(highcharter)
 
 Diesel &lt;- read.csv("https://open-oven.github.io/India-Fuel-Price-Updater/data/Diesel.csv")
 
 Petrol &lt;- read.csv("https://open-oven.github.io/India-Fuel-Price-Updater/data/Petrol.csv")
 
-
-
 petrol_latest &lt;- slice(Petrol, 1L) 
 diesel_latest &lt;- slice(Diesel, 1L)
-
-
 ```
 
 Last update: `r petrol_latest$Date` ... Source: [India fuel dashboard - github](https://github.com/arungop/India-fuel-dashboard)
@@ -2136,9 +2130,9 @@ Dd &lt;- ggplot(Diesel, aes(x = Date, y = Delhi)) +            # Draw ggplot2 pl
   theme_minimal()
   
 Dd
+
+
 ```
-
-
 
 # Mumbai
 

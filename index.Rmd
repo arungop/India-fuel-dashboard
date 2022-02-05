@@ -13,19 +13,13 @@ output:
 ```{r setup, include=FALSE}
 library(flexdashboard)
 library(tidyverse)
-library(plotly)
-library(highcharter)
 
 Diesel <- read.csv("https://open-oven.github.io/India-Fuel-Price-Updater/data/Diesel.csv")
 
 Petrol <- read.csv("https://open-oven.github.io/India-Fuel-Price-Updater/data/Petrol.csv")
 
-
-
 petrol_latest <- slice(Petrol, 1L) 
 diesel_latest <- slice(Diesel, 1L)
-
-
 ```
 
 Last update: `r petrol_latest$Date` ... Source: [India fuel dashboard - github](https://github.com/arungop/India-fuel-dashboard)
@@ -86,9 +80,9 @@ Dd <- ggplot(Diesel, aes(x = Date, y = Delhi)) +            # Draw ggplot2 plot
   theme_minimal()
   
 Dd
+
+
 ```
-
-
 
 # Mumbai
 
